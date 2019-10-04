@@ -1,0 +1,27 @@
+#
+
+git init
+git add index.htm
+git config user.name "Kownledge R."
+git config user.email knowledger@gc-bank.org
+cat <<EOF > .gitignore
+*~
+*.org
+_site
+.jekyll-cache
+EOF
+cat <<EOF > Gemfile
+# minimal Gemfile for netlify
+source "https://rubygems.org"
+gem "jekyll"
+EOF
+
+
+git add .gitignore Gemfile
+git commit -m "first commit"
+git remote add origin git@michel47.github.com:michel47/knowledger.git
+git push -u origin master
+
+find . -name \*\.org -delete
+jekyll build
+
