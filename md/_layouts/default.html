@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+<title>$title$</title>
+$for(author)$
+<meta name="author" content="$author$" />
+$endfor$
+$if(keywords)$
+<meta name="keywords" content="$keywords$" />
+$endif$
+</head>
+<body>
+$if(subtitle)$
+<h2>subtitle: $subtitle$</h2>
+$endif$
+$if(institute)$
+<small>from $institute$ institute</small>
+$endif$
+$if(abstract)$
+<h3>abstract:</h3>
+<p>$abstract$
+</p>
+$endif$
+$body$
+<p>
+map file : <a href="http://127.0.0.1:8080/ipfs/$qmjson$/">$qmjson$</a>
+</p>
+<pre>
+header-includes: $header-includes$
+include-before: $include-before$
+include-after: $include-after$
+</pre>
+
+</body>
+--&nbsp;<br>
+[HLR] is a techology from [P2PCI]
+<script>
+var json=$meta-json$
+var qmdata='$qmjson$'
+</script>
+<script src=_includes/holowiki.js type=text/javascript></script>
